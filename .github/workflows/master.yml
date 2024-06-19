@@ -25,7 +25,7 @@ jobs:
           npm install --no-optional reveal-md &&
           mkdir build &&
           cp -r include build/ &&
-          ./node_modules/.bin/reveal-md --static build --theme white *.md
+          ./node_modules/.bin/reveal-md --static build --theme white "`find . -maxdepth 1 -name "*.md" -not -name README.md`"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
